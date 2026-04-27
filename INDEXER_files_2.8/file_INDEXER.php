@@ -312,7 +312,7 @@ header('Content-type: text/html; charset=utf-8');
 /* 3. Проверяем наличие файла files.txt и, если его нет, выдаем сообщение и кнопку для индексации ИМЕН файлов сайта(за исключением запрещенных)
       Файл files.txt формируется при помощи file_FINDER.php    */
 if(!file_exists(PATH_FILE_NAMES_ALL_FILES)){
-echo '<input src="/LOCAL_only/REDACTOR/img/indexing-files.png" style="background-image: none; vertical-align: middle; margin-left: 15px; width: 41px;" onclick="file_FINDER()" class="buttons_REDACTOR" title="Запустить индексирование ИМЕН всех файлов сайта" alt="Индексировать" type="image"><br/>';
+echo '<input src="/LOCAL_only/REDACTOR/img/indexing-files.png" style="background-image: none; vertical-align: middle; margin-left: 15px; width: 41px;" onclick="file_FINDER(\'ALL\')" class="buttons_REDACTOR" title="Запустить индексирование ИМЕН всех файлов сайта" alt="Индексировать" type="image"><br/>';
     die('Ошибка: не найден файл с перечнем всех файлов сайта (за исключением запрещенных) <b>'. PATH_FILE_NAMES_ALL_FILES. '</b>. Возможно, требуется сделать индексирование ИМЕН всех файлов сайта. Для этого - нажмите на кнопку.<br/>');
 }
 
@@ -1361,5 +1361,3 @@ function start_NotepadPP_working1($file_to_open, $n, $c){
         die('<p class="error_mes">В результате попытки открытия файла в программе notepad++ возникла ошибка. Вот ее код: '. $exec_res_code .'</p>>');
     }
  }
-
-
